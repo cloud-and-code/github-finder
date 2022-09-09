@@ -27,6 +27,16 @@ export const getSingleUser = async login => {
     window.location = '/notfound'
   } else {
     return response.data
-
   }
+}
+
+// get user repos
+export const getUserRepos = async login => {
+  const params = new URLSearchParams({
+    sort: 'created',
+    per_page: 10,
+  })
+
+  const response = await github.get(`/users?${login}/repos?${params}`)
+  return response.data
 }
