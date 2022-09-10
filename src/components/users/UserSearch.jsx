@@ -9,9 +9,7 @@ function UserSearch() {
   const { users, dispatch } = useContext(GithubContext)
   const { setAlert } = useContext(AlertContext)
 
-  const handleChange = e => {
-    setText(e.target.value)
-  }
+  const handleChange = e => setText(e.target.value)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -35,7 +33,7 @@ function UserSearch() {
             <div className='relative'>
               <input
                 type='text'
-                className='input w-full pr-40 bg-gray-200 input-lg text-black'
+                className='w-full pr-40 bg-gray-200 input input-lg text-black'
                 placeholder='Search'
                 value={text}
                 onChange={handleChange}
@@ -44,7 +42,7 @@ function UserSearch() {
                 type='submit'
                 className='absolute top-0 right-0 rounded-l-none w-36 btn btn-lg'
               >
-                Search
+                Go
               </button>
             </div>
           </div>
